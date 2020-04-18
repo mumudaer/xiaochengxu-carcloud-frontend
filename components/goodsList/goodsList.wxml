@@ -1,0 +1,15 @@
+<!--components/goodsList/goodsList.wxml-->
+<block wx:for="{{goodsList}}" wx:key="index">
+	<van-card 
+		custom-class="backSty"  
+		bind:tap="toDetail" 
+		price="{{item.price}}" 
+		desc="{{item.desc}}" 
+		title="{{item.title}}" 
+		thumb="{{ imageURL }}"
+	>
+		<view slot="num" style="float:right;color:#9A979B;">
+			已售{{item.saled}}
+		</view>
+	</van-card>
+</block>

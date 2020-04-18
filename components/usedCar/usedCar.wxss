@@ -1,0 +1,7 @@
+/* components/usedCar/usedCar.wxss */
+.tabSty{
+  background-color: #EDEEF5;
+}
+.tabActiveSty{
+  background-color: #FFFFFF;
+}

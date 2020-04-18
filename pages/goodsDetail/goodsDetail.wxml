@@ -1,0 +1,10 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+<view >
+	<view class="flex-center">
+		<van-image width="295" height="185" fit="cover" src="/images/car.jpg" />
+	</view>
+	<detail-card />
+	<view style="position:fixed;left:0;bottom:0;width:100vw">
+		<button class="btnSty"  style="width:100%;color:#FFFEFF;border-radius:0" bindtap="toOrderFrom" >我要预约下单</button>
+	</view>
+</view>

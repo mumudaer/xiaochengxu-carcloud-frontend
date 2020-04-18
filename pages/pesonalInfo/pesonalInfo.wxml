@@ -1,0 +1,24 @@
+<!--pages/pesonalInfo/pesonalInfo.wxml-->
+
+<view class="infoCard" bindtap="toPersonalInfo">
+  <view style="margin-left:30rpx;">头像</view>
+  <view class="avatarSty" >
+    <open-data type="userAvatarUrl" />
+  </view>
+</view>
+
+<view style="margin-top:20rpx">
+  <van-cell title="用户名" >
+    <open-data type="userNickName"></open-data>
+  </van-cell>
+  <van-cell title="性别" >
+    <open-data type="userGender" lang="zh_CN"></open-data>
+  </van-cell>
+  <van-cell title="国家">
+    <open-data type="userCountry" lang="zh_CN"></open-data>
+  </van-cell>
+</view>
+
+<view style="margin-top:30rpx">
+  <van-cell title="联系客服" value="234782468273" />
+</view>

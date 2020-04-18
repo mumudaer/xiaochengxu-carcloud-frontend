@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "goods-list":"/components/goodsList/goodsList",
+    "used-car":"/components/usedCar/usedCar"
+  }
+}

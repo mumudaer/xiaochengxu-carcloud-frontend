@@ -1,0 +1,6 @@
+<!--pages/orderSuccess/orderSuccess.wxml-->
+<view style="height:100vh" class="successSty">
+  <view class="iconfont icon-zhifuchenggong imgSty"></view>
+  <view style="margin:100rpx">预约支付成功</view>
+  <van-button type="primary" color="#3AD1C0" size="large" bindtap="toHome">返回主页面</van-button>
+</view>

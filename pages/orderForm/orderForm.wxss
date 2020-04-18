@@ -1,0 +1,6 @@
+/* pages/orderForm/orderForm.wxss */
+
+.van-submit-bar .van-button--danger{
+  border: 0;
+  background: #3AD1C0;
+}

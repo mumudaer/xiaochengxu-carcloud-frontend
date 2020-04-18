@@ -1,0 +1,16 @@
+<!--pages/buyCar/buyCar.wxml-->
+<block wx:for="{{carList}}" wx:key="index">
+  <van-card
+    custom-class="backStyle"
+    title-class="titleSty"
+    title="{{item.carName}}"
+    thumb="{{ imageURL }}"
+  >
+    <view slot="desc" style="margin-top:16rpx;">
+      <view>所在城市：{{item.city}}</view>
+      <view>上牌时间：{{item.time}}</view>
+      <view>行使里程：{{item.mile}}</view>
+      <view>联系方式：{{item.phoneNumber}}</view>
+    </view>
+  </van-card>
+</block>

@@ -1,0 +1,5 @@
+/* pages/goodsDetail/goodsDetail.wxss */
+
+.btnSty{
+  background-color: #39D2BE;
+}

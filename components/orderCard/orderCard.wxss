@@ -1,0 +1,13 @@
+/* components/orderCard/orderCard.wxss */
+.clearfix{
+  overflow: hidden;
+}
+.cancelSty{
+  float: right;
+  padding: 10rpx 30rpx;
+  font-size: 30rpx;
+  color: #D1CED1;
+  border:2rpx solid #D1CED1 ;
+  border-radius: 40rpx;
+  background-color: #FFFFFF;
+}

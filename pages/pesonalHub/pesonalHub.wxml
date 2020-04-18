@@ -1,0 +1,25 @@
+<!--pages/pesonalHub/pesonalHub.wxml-->
+<!-- <van-cell value="内容" is-link>
+  <view slot="title" class="flex-center">
+    <van-image
+      round
+      width="100rpx"
+      height="100rpx"
+      src="https://img.yzcdn.cn/vant/cat.jpeg"
+    />
+    <view class="van-cell-text" class="padding-left:20rpx" >单元格</view>
+  </view>
+</van-cell> -->
+<view>
+  <view style="display:flex;align-items:center;padding:40rpx;" bindtap="toPersonalInfo">
+    <van-image
+      class="flex-center"
+      round
+      width="100rpx"
+      height="100rpx"
+      src="https://img.yzcdn.cn/vant/cat.jpeg"
+    />
+    <view style="margin-left:30rpx" >XXX</view>
+  </view>
+  <view style="margin-left:40rpx">联系客服：234234523</view>
+</view>

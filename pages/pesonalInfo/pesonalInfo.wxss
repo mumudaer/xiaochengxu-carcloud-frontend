@@ -1,0 +1,19 @@
+/* pages/pesonalInfo/pesonalInfo.wxss */
+page{
+  background-color: #F7F6F9;
+}
+
+.infoCard{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  margin-top:20rpx;
+  padding:50rpx 30rpx;
+  background-color: #FFFEFF;
+}
+
+.avatarSty{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 100rpx;
+}

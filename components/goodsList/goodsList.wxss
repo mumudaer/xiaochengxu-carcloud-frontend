@@ -1,0 +1,6 @@
+/* components/goodsList/goodsList.wxss */
+.backSty{
+  background-color: #FFFEFF;
+  border-bottom: 2rpx solid #E7E4E7;
+
+}

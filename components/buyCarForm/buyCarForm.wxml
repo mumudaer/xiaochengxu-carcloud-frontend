@@ -1,0 +1,34 @@
+<!--components/buyCarForm/buyCarForm.wxml-->
+<van-cell-group border="{{false}}">
+  <van-field
+    value="{{ provinceAndCity }}"
+    required
+    label="所在省市"
+    placeholder="请输入所在省市"
+    bind:blur="getProvinceAndCity"
+  />
+  <van-field
+    value="{{ brandTime }}"
+    required
+    label="上牌时间"
+    placeholder="请输入上牌时间"
+    bind:blur="getBrandTime"
+  />
+  <van-field
+    value="{{ wantedtype }}"
+    required
+    label="理想车型"
+    placeholder="请输入理想车型"
+    bind:blur="getWantedType"
+  />
+  <van-field
+    value="{{ mileage }}"
+    required
+    label="行驶里程"
+    placeholder="请输入行驶里程"
+    bind:blur="getMileage"
+  />
+  <view class="flex-center" style="margin-top:20rpx;">
+    <van-button color="#37D3BE" bindtap="searchInfo">查询信息</van-button>
+  </view>
+</van-cell-group>

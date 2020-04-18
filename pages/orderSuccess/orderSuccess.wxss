@@ -1,0 +1,13 @@
+/* pages/orderSuccess/orderSuccess.wxss */
+.successSty{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.imgSty{
+  margin-top: 200rpx;
+  font-size:180rpx;
+  color:#3AD1C0;
+}

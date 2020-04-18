@@ -1,0 +1,7 @@
+.centerClass{
+  display: flex;
+  height: 90vh;
+  flex-direction: column;
+  justify-content:space-evenly;
+  align-items: center;
+}

@@ -1,0 +1,7 @@
+/* pages/buyCar/buyCar.wxss */
+.backStyle{
+  border-bottom: 2rpx solid #FFFEFF;
+}
+.titleSty{
+  font-size: 30rpx;
+}

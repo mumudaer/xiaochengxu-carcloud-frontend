@@ -1,0 +1,9 @@
+<!--components/usedCar/usedCar.wxml-->
+<van-tabs active="buyCar" line-height="0" border="{{false}}" nav-class="tabSty" tab-active-class="tabActiveSty">
+  <van-tab title="我要买车" name="buyCar">
+    <buy-car />
+  </van-tab>
+  <van-tab title="我要卖车" name="saleCar">
+    <sale-car />
+  </van-tab>
+</van-tabs>

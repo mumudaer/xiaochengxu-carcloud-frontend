@@ -1,0 +1,42 @@
+<!--pages/orderForm/orderForm.wxml-->
+<view>
+	<view class="flex-center">
+		<van-image width="295" height="185" fit="cover" src="/images/car.jpg" />
+	</view>
+  <van-cell-group>
+    <van-field
+      value="{{ address }}"
+      required
+      label="洗车地址"
+      placeholder="请输入洗车地址"
+      bind:blur="getAddress"
+    />
+    <van-field
+      value="{{ carType }}"
+      label="汽车类型"
+      placeholder="请输入汽车类型"
+      required
+      bind:blur="getCarType"
+    />
+    <van-field
+      value="{{ carNumber }}"
+      required
+      label="洗车车牌"
+      placeholder="请输入洗车车牌"
+      bind:blur="getCarNumber"
+    />
+    <van-field
+      value="{{ phoneNumber }}"
+      required
+      label="联系方式"
+      placeholder="请输入联系方式"
+      bind:blur="getPhoneNumber"
+    />
+  </van-cell-group>
+
+  <van-submit-bar
+    price="{{ 3050 }}"
+    button-text="立即预约"
+    bind:submit="onSubmit"
+  />
+</view>

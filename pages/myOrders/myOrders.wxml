@@ -1,0 +1,26 @@
+<!--pages/myOrders/myOrders.wxml-->
+<view wx:if="{{!btnShow}}" style="padding:0 30rpx;">
+  <block>
+    <order-card bindcancelReason="showCancelReason" />
+  </block>
+</view>
+<view wx:if="{{btnShow}}" class="loginBtn">
+  <van-button open-type="getUserInfo" bindgetuserinfo="getUserInfo" color="#3AD1C0" round type="info">请先登陆</van-button>
+</view>
+
+<van-action-sheet
+  show="{{ show }}"
+  round="{{false}}"
+>
+  <van-picker
+    show-toolbar
+    title="取消原因"
+    columns="{{ columns }}"
+    bind:cancel="onClose"
+    bind:confirm="onConfirm"
+  />
+</van-action-sheet>
+
+<van-toast id="van-toast" />
+
+
