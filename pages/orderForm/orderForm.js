@@ -1,4 +1,6 @@
 // pages/orderForm/orderForm.js
+import {base_url} from '../../utils/constant'
+let serviceid = null
 Page({
 
   /**
@@ -9,13 +11,18 @@ Page({
     carType:'',
     carNumber:'',
     phoneNumber:'',
+    price:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.serviceid,options.price)
+    serviceid = options.serviceid
+    this.setData({
+      price:options.price*100
+    })
   },
   getAddress(event){
     console.log(event.detail.value)
@@ -43,9 +50,27 @@ Page({
   },
 
   onSubmit:function(){
-    wx.navigateTo({
-      url: '/pages/orderSuccess/orderSuccess',
+    //TODO 收集数据请求接口
+    wx.request({
+      url:base_url+'/order/add',
+      method:'POST',
+      data:{
+        carNumber: this.data.carNumber ,
+        goodsId:serviceid ,
+        carType:this.data.carType,
+        serviceAddress: this.data.address,
+        phoneNumber:this.data.phoneNumber
+      },
+      success:res => {
+        console.log(res.data)
+        if(!res.data.success) return
+        
+        wx.navigateTo({
+          url: '/pages/orderSuccess/orderSuccess',
+        })
+      }
     })
+   
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

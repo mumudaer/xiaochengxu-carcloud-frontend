@@ -3,13 +3,13 @@
   <van-card
     custom-class="backStyle"
     title-class="titleSty"
-    title="{{item.carName}}"
-    thumb="{{ imageURL }}"
+    title="{{item.name}}"
+    thumb="{{ item.picture }}"
   >
     <view slot="desc" style="margin-top:16rpx;">
       <view>所在城市：{{item.city}}</view>
-      <view>上牌时间：{{item.time}}</view>
-      <view>行使里程：{{item.mile}}</view>
+      <view>价格：{{item.servicePrice}}</view>
+      <view>行使里程：{{item.mileage}}</view>
       <view>联系方式：{{item.phoneNumber}}</view>
     </view>
   </van-card>

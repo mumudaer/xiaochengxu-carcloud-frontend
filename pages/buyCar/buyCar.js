@@ -6,35 +6,17 @@ Page({
    */
   data: {
     imageURL:'/images/wash.jpg',
-    carList:[
-      {
-        carName:'Poly',
-        city:'商品标题',
-        time:'描述信息',
-        mile:10.00,
-        phoneNumber:300
-      },
-      {
-        carName:'Poly',
-        city:'商品标题',
-        time:'描述信息',
-        mile:10.00,
-        phoneNumber:300
-      },{
-        carName:'Poly',
-        city:'商品标题',
-        time:'描述信息',
-        mile:10.00,
-        phoneNumber:300
-      },
-    ]
+    carList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.carList)
+    this.setData({
+      carList:JSON.parse(options.carList)
+    })
   },
 
   /**

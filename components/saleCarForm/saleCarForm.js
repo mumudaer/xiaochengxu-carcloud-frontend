@@ -1,4 +1,5 @@
 // components/saleCarForn/saleCarForm.js
+const base_url = 'http://localhost:5000'
 Component({
   /**
    * 组件的属性列表
@@ -68,9 +69,26 @@ Component({
     },
     publishInfo(){
       console.log('publish')
-      wx.navigateTo({
-        url: '/pages/publishSuccess/publishSuccess',
+      wx.request({
+        url:base_url+'/goods/addCar',
+        data:{
+          "carBrand": this.data.brand,
+          "carType": this.data.type,
+          "city": this.data.city,
+          "mileage": this.data.mileage,
+          "phoneNumber": this.data.phoneNumber,
+          "serviceName": this.data.other,
+          "servicePrice": this.data.price
+        },
+        method:'POST',
+        success:res => {
+          console.log(res.data.data)
+          wx.navigateTo({
+            url: '/pages/publishSuccess/publishSuccess',
+          })
+        }
       })
+     
     }
   }
 })

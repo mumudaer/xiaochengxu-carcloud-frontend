@@ -1,17 +1,17 @@
 <!--components/detailCard/detailCard.wxml-->
 <view>
   <van-cell 
-    title="机油保养套餐" 
+    title="{{serviceDetail.name}}" 
     size="large" 
     use-label-slot
     border="{{false}}" 
   >
-    <view style="font-size:30rpx;">已售500</view>
+    <view style="font-size:30rpx;">已售{{serviceDetail.finishNumber}}</view>
     <view slot="label">
-      uiqweyruiqwehruiqahwuhdriukahf
+      {{serviceDetail.serviceDesc}}
     </view>
   </van-cell>
   <view style="margin-left:40rpx;">
-    <view class="iconfont icon-renminbi" style="font-size:60rpx;color:#EE4D46;">400</view>
+    <view class="iconfont icon-renminbi" style="font-size:60rpx;color:#EE4D46;">{{serviceDetail.servicePrice}}</view>
   </view>
 </view>

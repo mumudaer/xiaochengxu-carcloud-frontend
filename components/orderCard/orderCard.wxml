@@ -1,13 +1,14 @@
 <!--components/orderCard/orderCard.wxml-->
 <view style="margin-top:20rpx;">
-  <van-panel title="订单3424324234234" use-footer-slot>
+  <van-panel title="订单{{orderDetail.id}}" use-footer-slot>
     <view style="padding:20rpx 40rpx;color:#9D989C;font-size:32rpx;">
-      <view>服务类型：洗车</view>
-      <view>预约商家：超级洗车</view>
-      <view>上门地址：广东省东莞市松山湖</view>
-      <view>联系方式：2342345235234</view>
+      <view>服务类型：{{orderDetail.serviceType}}</view>
+      <view>预约商家：{{orderDetail.businessName}}</view>
+      <view>上门地址：{{orderDetail.serviceAddress}}</view>
+      <view>联系方式：{{orderDetail.phoneNumber}}</view>
     </view>
     <view slot="footer" class="clearfix">
+      <view class="cancelSty" size="mini" bindtap="finshOrder">订单完成</view>
       <view class="cancelSty" size="mini" bindtap="cancelOrder">取消订单</view>
     </view>
   </van-panel>

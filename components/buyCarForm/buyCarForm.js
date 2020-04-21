@@ -1,4 +1,5 @@
 // components/buyCarForm/buyCarForm.js
+const base_url = 'http://localhost:5000'
 Component({
   /**
    * 组件的属性列表
@@ -12,7 +13,7 @@ Component({
    */
   data: {
     provinceAndCity:'',
-    brandTime:'',
+    priceRange:'',
     wantedtype:'',
     mileage:'',
   },
@@ -27,10 +28,10 @@ Component({
         provinceAndCity:event.detail.value
       })
     },
-    getBrandTime(event){
+    getPriceRange(event){
       console.log(event.detail.value)
       this.setData({
-        brandTime:event.detail.value
+        priceRange:event.detail.value
       })
     },
     getWantedType(event){
@@ -54,8 +55,23 @@ Component({
 
     searchInfo(){
       console.log('search')
-      wx.navigateTo({
-        url: '/pages/buyCar/buyCar',
+      wx.request({
+        url:base_url+'/goods/carList',
+        data:{
+          "carType": "",
+          "city": "",
+          "mileage": "",
+          "pageIndex": 1,
+          "pageSize": 10,
+          "priceRange": "1-100000"
+        },
+        method:'POST',
+        success:res => {
+          console.log(res.data.data)
+          wx.navigateTo({
+            url: `/pages/buyCar/buyCar?carList=${JSON.stringify(res.data.data.list)}`,
+          })
+        }
       })
     }
   }

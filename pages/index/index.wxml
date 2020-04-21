@@ -1,15 +1,15 @@
 <!--index.wxml-->
-<van-tabs active="CarWash" bind:click="onClick" color="#3DD0BC" border="{{false}}">
-	<van-tab title="上门洗车" name="CarWash">
-		<goods-list businessTag="CarWash"/>
+<van-tabs active="1" bind:click="onClick" color="#3DD0BC" border="{{false}}">
+	<van-tab title="上门洗车" name="1">
+		<goods-list goodsList="{{washList}}" businessTag="CarWash"/>
 	</van-tab>
-	<van-tab title="上门维修" name="RepairCar">
-    <goods-list businessTag="RepairCar" />
+	<van-tab title="上门维修" name="2">
+    <goods-list goodsList="{{repaireList}}" businessTag="RepairCar" />
   </van-tab>
-	<van-tab title="二手车服务" name="UsedCar">
+	<van-tab title="二手车服务" name="4">
     <used-car />
   </van-tab>
-	<van-tab title="上门拖车" name="drugCar">
-    <goods-list businessTag="drugCar" />
+	<van-tab title="上门拖车" name="3">
+    <goods-list goodsList="{{drugList}}" businessTag="drugCar" />
   </van-tab>
 </van-tabs>

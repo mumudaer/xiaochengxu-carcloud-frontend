@@ -35,7 +35,7 @@
   </van-cell-group>
 
   <van-submit-bar
-    price="{{ 3050 }}"
+    price="{{ price }}"
     button-text="立即预约"
     bind:submit="onSubmit"
   />

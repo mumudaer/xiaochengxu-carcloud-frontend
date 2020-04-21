@@ -4,14 +4,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    orderDetail:Object
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
+    
   },
 
   /**
@@ -20,6 +20,9 @@ Component({
   methods: {
     cancelOrder:function(){
       this.triggerEvent('cancelReason')
+    },
+    finshOrder:function(){
+      this.triggerEvent('finshOrder')
     }
   }
 })

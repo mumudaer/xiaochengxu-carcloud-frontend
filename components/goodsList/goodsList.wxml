@@ -2,14 +2,15 @@
 <block wx:for="{{goodsList}}" wx:key="index">
 	<van-card 
 		custom-class="backSty"  
-		bind:tap="toDetail" 
-		price="{{item.price}}" 
-		desc="{{item.desc}}" 
-		title="{{item.title}}" 
-		thumb="{{ imageURL }}"
+		bind:tap="toDetail"
+		data-serviceid="{{item.id}}" 
+		price="{{item.servicePrice}}" 
+		desc="{{item.serviceDesc}}" 
+		title="{{item.name}}" 
+		thumb="{{ item.picture }}"
 	>
 		<view slot="num" style="float:right;color:#9A979B;">
-			已售{{item.saled}}
+			已售{{item.finishNumber}}
 		</view>
 	</van-card>
 </block>

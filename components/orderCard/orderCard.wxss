@@ -4,6 +4,7 @@
 }
 .cancelSty{
   float: right;
+  margin-left: 15rpx;
   padding: 10rpx 30rpx;
   font-size: 30rpx;
   color: #D1CED1;

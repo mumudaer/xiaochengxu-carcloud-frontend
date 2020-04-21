@@ -8,11 +8,11 @@
     bind:blur="getProvinceAndCity"
   />
   <van-field
-    value="{{ brandTime }}"
+    value="{{ priceRange }}"
     required
-    label="上牌时间"
-    placeholder="请输入上牌时间"
-    bind:blur="getBrandTime"
+    label="价格区间"
+    placeholder="请输入价格区间，例1-10000"
+    bind:blur="getPriceRange"
   />
   <van-field
     value="{{ wantedtype }}"
