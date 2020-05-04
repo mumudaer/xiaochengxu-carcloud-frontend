@@ -1,5 +1,6 @@
 // components/saleCarForn/saleCarForm.js
-const base_url = 'http://localhost:5000'
+import {base_url,pageSize} from '../../utils/constant'
+import {storage} from '../../utils/util'
 Component({
   /**
    * 组件的属性列表
@@ -69,6 +70,7 @@ Component({
     },
     publishInfo(){
       console.log('publish')
+      const token = storage.getToken() || ''
       wx.request({
         url:base_url+'/goods/addCar',
         data:{
@@ -79,6 +81,10 @@ Component({
           "phoneNumber": this.data.phoneNumber,
           "serviceName": this.data.other,
           "servicePrice": this.data.price
+        },
+        header: {
+          'content-type': 'application/json',
+          token
         },
         method:'POST',
         success:res => {

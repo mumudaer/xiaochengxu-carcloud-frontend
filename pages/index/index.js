@@ -2,6 +2,7 @@
 //获取应用实例
 const app = getApp()
 import {base_url,pageSize} from '../../utils/constant'
+import {storage} from '../../utils/util'
 let serviceType = '1'
 let pageIndex = 1
 Page({
@@ -25,6 +26,7 @@ Page({
     this.getData()
   },
   getData(pageIndex){
+    const token = storage.getToken() || ''
     wx.request({
       url:base_url+'/goods/list',
       method:'POST',
@@ -32,6 +34,10 @@ Page({
         pageIndex,
         pageSize,
         serviceType
+      },
+      header: {
+        'content-type': 'application/json',
+        token
       },
       success:res => {
         console.log(res.data)

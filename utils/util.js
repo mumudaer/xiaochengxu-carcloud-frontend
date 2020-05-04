@@ -14,6 +14,22 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const storage = {
+  getToken:() => {
+    return wx.getStorageSync('token')
+  },
+  setToken:(token) => {
+    return wx.setStorageSync('token',token)
+  },
+  getOpenId:() => {
+    return wx.getStorageSync('openId')
+  },
+  setOpenId:(openId) => {
+    return wx.setStorageSync('openId',openId)
+  },
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime,
+  storage
 }

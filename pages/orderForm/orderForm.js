@@ -1,5 +1,6 @@
 // pages/orderForm/orderForm.js
 import {base_url} from '../../utils/constant'
+import {storage} from '../../utils/util'
 let serviceid = null
 Page({
 
@@ -51,6 +52,7 @@ Page({
 
   onSubmit:function(){
     //TODO 收集数据请求接口
+    const token = storage.getToken() || ''
     wx.request({
       url:base_url+'/order/add',
       method:'POST',
@@ -60,6 +62,10 @@ Page({
         carType:this.data.carType,
         serviceAddress: this.data.address,
         phoneNumber:this.data.phoneNumber
+      },
+      header: {
+        'content-type': 'application/json',
+        token
       },
       success:res => {
         console.log(res.data)

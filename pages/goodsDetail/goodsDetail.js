@@ -1,6 +1,7 @@
 // pages/goodsDetail/goodsDetail.js
 import {base_url} from '../../utils/constant'
 let serviceid = null
+import {storage} from '../../utils/util'
 Page({
 
   /**
@@ -19,11 +20,16 @@ Page({
     this.getDetail()
   },
   getDetail:function(){
+    const token = storage.getToken() || ''
     wx.request({
       url:base_url+'/goods/detail',
       method:'POST',
       data:{
         serviceid
+      },
+      header: {
+        'content-type': 'application/json',
+        token
       },
       success:res => {
         console.log(res.data)

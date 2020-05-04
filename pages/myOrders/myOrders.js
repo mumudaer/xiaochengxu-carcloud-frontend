@@ -2,6 +2,8 @@
 import Toast from '/@vant/weapp/toast/toast';
 import Dialog from '/@vant/weapp/dialog/dialog';
 import {base_url,pageSize} from '../../utils/constant'
+import {storage} from '../../utils/util'
+
 let encryptedData = null
 let iv = null
 let code = null
@@ -43,12 +45,17 @@ Page({
   onConfirm(event) {
     const { picker, value, index } = event.detail;
     console.log(event,picker, value, index)
+    const token = storage.getToken() || ''
     wx.request({
       url: base_url+'/order/quit',
       method:'POST',
       data:{
         cancelReason: value ,
         id
+      },
+      header: {
+        'content-type': 'application/json',
+        token
       },
       success:(res) => {
         console.log(res)
@@ -78,6 +85,9 @@ Page({
                   iv,
                   code
                 },
+                header: {
+                  'content-type': 'application/json'
+                },
                 success:(res) => {
                   if(!res.data.success) return
                   console.log(res)
@@ -97,12 +107,17 @@ Page({
     }
   },
   getData(pageIndex){
+    const token = storage.getToken() || ''
     wx.request({
       url:base_url+'/order/list',
       method:'POST',
       data:{
         pageIndex,
         pageSize
+      },
+      header: {
+        'content-type': 'application/json',
+        token
       },
       success:res => {
         console.log(res)

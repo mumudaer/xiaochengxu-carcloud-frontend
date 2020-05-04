@@ -1,5 +1,6 @@
 // components/buyCarForm/buyCarForm.js
-const base_url = 'http://localhost:5000'
+import {base_url,pageSize} from '../../utils/constant'
+import {storage} from '../../utils/util'
 Component({
   /**
    * 组件的属性列表
@@ -55,6 +56,7 @@ Component({
 
     searchInfo(){
       console.log('search')
+      const token = storage.getToken() || ''
       wx.request({
         url:base_url+'/goods/carList',
         data:{
@@ -66,6 +68,10 @@ Component({
           "priceRange": "1-100000"
         },
         method:'POST',
+        header: {
+          'content-type': 'application/json',
+          token
+        },
         success:res => {
           console.log(res.data.data)
           wx.navigateTo({
